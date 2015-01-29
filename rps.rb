@@ -21,38 +21,33 @@ class Players
     puts "#{player2} what is your move?"
     attack2 = gets.chomp.downcase
     attacks << attack2
-
-    attacks.inspect
-  end
-  
-  def rules  
-    if player1 && player2 != "rock" || "paper" || "scissors"
+      
+     if attack1 && attack2 != "rock" || "paper" || "scissors"
       puts "Error!"
-    else
+     end
       #Player 1 wins
-      if player1 == "rock" && player2 == "scissors"
+      if attack1 == "rock" && attack2 == "scissors"
         puts "Player 1 wins!"
-      elsif player1 == "paper" && player2 == "rock"
+      elsif attack1 == "paper" && attack2 == "rock"
         puts "Player 1 wins!"
-      elsif player1 == "scissors" && player == "paper"
+      elsif attack1 == "scissors" && attack2 == "paper"
         puts "Player 1 wins!"
       #Player 2 wins
-      elsif player1 == "rock" && player2 == "paper"
+      elsif attack1 == "rock" && attack2 == "paper"
         puts "Player 2 wins!"
-      elsif player1 == "paper" && player2 == "scissors"
+      elsif attack1 == "paper" && attack2 == "scissors"
         puts "Player 2 wins!"
-      elsif player1 == "scissors" && player2 == "rock"
+      elsif attack1 == "scissors" && attack2 == "rock"
         puts "Player 2 wins!"
       #No one wins
-      elsif player1 == "rock" && player2 == "rock"
+      elsif attack1 == "rock" && attack2 == "rock"
         puts "Tie..."
-      elsif player1 == "paper" && player2 == "paper"
+      elsif attack1 == "paper" && attack2 == "paper"
         puts "Tie..."
-      elsif player1 == "scissors" && player2 == "scissors"
+      elsif attack1 == "scissors" && attack2 == "scissors"
         puts "Tie..."
       end
-  end
-
+    end
 end
   
-binding.pry
+#binding.pry
