@@ -16,12 +16,40 @@ require 'pry'
 # 4.Go back and provide method documentation for all of your classes and custom-written methods.
 # If you wrote the class (or method), you gotta document it.
 
+
+
+
+# Class: Players
+#
+# Right now, it contains a rock paper scissors game, and people who play it!
+# I do realize this is a mess. It's a WIP.
+#
+# Attributes:
+# @none - None so far. This is one big monster mess of a method.
+#
+# Public Methods:
+# driver
+
 class Players
   
-  def driver
+  # Public: #diver
+  # It does it ALL right now...
+  #
+  # Parameters:
+  # None yet - None yet.
+  #
+  # Returns:
+  # Returns a winner
+  #
+  # State Changes:
+  # Sets winning_player and losing_player.
+  
+  #def driver
     #figuring out HOW to get my arrays into this hash :s 
     players_and_moves = {}
     
+    #Using if, elsif, and else blocks, write a program which allows two users to each input their moves in "Rock, Paper, Scissors" and which determines the winner (or if a tie occurred).
+
     #Getting player info - Separate method later?
     players = []
     puts "Player 1, what is your name?"
@@ -33,84 +61,32 @@ class Players
 
     puts "#{player1} and #{player2} are you ready for Rock, Paper, Scissors?!?"
     puts
-    
-    #Getting move info - Separate method later?
-    attacks = []
-    puts "#{player1} what is your move?"
-    attack1 = gets.chomp.downcase
-    attacks << attack1 
-    puts "#{player2} what is your move?"
-    attack2 = gets.chomp.downcase
-    attacks << attack2
-    
-    #variables for keeping score...
+
     player1_score = 0
     player2_score = 0
-      
-    #Rules are here - These will probably be good as separate methods later...  
-    if attack1 != "rock" && attack1 != "paper" && attack1 != "scissors"
-      puts "That's not even a real move!"
-    elsif attack2 != "rock" && attack2 != "paper" && attack2 != "scissors"
-      puts "Let's pick real moves...!"
-    end 
-    
-    #First non looping initial game....
-    #Player 1 wins
-    if attack1 == "rock" && attack2 == "scissors"
-      player1_score += 1
-      puts "Player 1 wins!"
-      puts
-    elsif attack1 == "paper" && attack2 == "rock"
-      player1_score += 1
-      puts "Player 1 wins!"
-      puts
-    elsif attack1 == "scisscors" && attack2 == "paper"
-      player1_score += 1
-      puts "Player 1 wins!"
-      puts
-    #No winners
-    elsif attack1 == "rock" && attack2 == "rock"
-      puts "No one wins"
-      puts
-    elsif attack1 == "paper" && attack2 == "paper"
-      puts "No one wins"
-      puts
-    elsif attack1 == "scissors" && attack2 == "scissors"
-      puts "No one wins!"
-      puts
-    #Player 2 wins
-    elsif attack1 == "rock" && attack2 == "paper"
-      player2_score += 1
-      puts "Player 2 wins"
-      puts
-    elsif attack1 == "paper" && attack2 == "scissors"
-      player2_score += 1
-      puts "Player 2 wins"
-      puts
-    elsif attack1 == "scissors" && attack2 == "rock"
-      player2_score += 1
-      puts "Player 2 wins!"
-      puts
-    end
-    
-    #Realizing I DEFINITELY need a method for this game...irk...
-    until (player1_score - 1) == (player2_score) || (player2_score - 1) == (player1_score)
-      puts "#{player1}: Choose rock, paper or scissors."
-      player1 = gets.chomp
-      puts "#{player2}: Choose rock, paper or scissors."
-      player2 = gets.chomp
+
+    until (player1_score - 2) == (player2_score) || (player2_score - 2) == (player1_score)
+      #Getting move info - Separate method later?
+      attacks = []
+      puts "#{player1} what is your move?"
+      attack1 = gets.chomp.downcase
+      attacks << attack1 
+      puts "#{player2} what is your move?"
+      attack2 = gets.chomp.downcase
+      attacks << attack2
+
       #Player 1 wins
       if attack1 == "rock" && attack2 == "scissors"
         player1_score += 1
-        puts "Player 1 wins!"
+        puts "#{player1} wins!"
         puts
       elsif attack1 == "paper" && attack2 == "rock"
         player1_score += 1
-        puts "Player 1 wins!"
+        puts "#{player1} wins!"
         puts
       elsif attack1 == "scisscors" && attack2 == "paper"
         player1_score += 1
-        puts "Player 1 wins!"
+        puts "#{player1} wins!"
         puts
       #No winners
       elsif attack1 == "rock" && attack2 == "rock"
@@ -125,28 +101,27 @@ class Players
       #Player 2 wins
       elsif attack1 == "rock" && attack2 == "paper"
         player2_score += 1
-        puts "Player 2 wins"
+        puts "#{player2} wins"
         puts
       elsif attack1 == "paper" && attack2 == "scissors"
         player2_score += 1
-        puts "Player 2 wins"
+        puts "#{player2} wins"
         puts
       elsif attack1 == "scissors" && attack2 == "rock"
         player2_score += 1
-        puts "Player 2 wins!"
+        puts "#{player2} wins!"
         puts
       else 
         puts "Not an option..."
       end
     end
 
-    if (player1_score - 1) == (player2_score)
-      puts "Player 1 wins the war!!"
+    if (player1_score - 2) == (player2_score)
+      puts "#{player1} wins the war!!"
     else
-      puts "Player 2 wins the war!!"
+      puts "#{player2} wins the war!!"
     end
-    
-  end
+  #end
 end
   
 
