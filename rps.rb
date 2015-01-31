@@ -30,11 +30,18 @@ require_relative 'player'
 #
 # Public Methods:
 # driver
+  
 
 class Driver
+  
   #figuring out HOW to get my arrays into this hash :s 
-  players_and_moves = {}
-  players = []
+  #players_and_moves = {}
+  def initialize
+    @players = []
+    @player1_score = 0
+    @player2_score = 0
+  end
+
 
   #Getting player info - Separate method later?
   puts "Player 1, what is your name?"
@@ -50,9 +57,8 @@ class Driver
   puts
   
   #trying to create more methods...not working...works if these aren't in method...
-  def score
-    @player1_score = 0
-    @player2_score = 0
+  def add_score(someones_score)
+    someones_score += 1
   end
 
   until (@player1_score - 2) == (@player2_score) || (@player2_score - 2) == (@player1_score)
@@ -67,7 +73,7 @@ class Driver
 
     #Player 1 wins
     if attack1 == "rock" && attack2 == "scissors"
-      @player1_score += 1
+      add_score(@player1_score)
       puts "#{player1} wins the battle!"
       puts
     elsif attack1 == "paper" && attack2 == "rock"
