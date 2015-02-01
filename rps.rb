@@ -43,20 +43,25 @@ class Driver
     # @player2_score
   end
 
-
-  #Getting player info - Separate method later?
-  puts "Player 1, what is your name?"
-  player1 = gets.chomp.capitalize
-  #player1 = Player.new(name)
-  players << player1
-  puts "Player 2 what is your name?"
-  player2 = gets.chomp.capitalize
-  #player2 = Player.new
-  players << player2
-
-  puts "#{player1} and #{player2} are you ready for Rock, Paper, Scissors?!?"
-  puts
   
+  def get_info
+    #Getting player info - Separate method later?
+    puts "Player 1, what is your name?"
+    name1 = gets.chomp.capitalize
+    player1 = Player.new(name1)
+    @players << player1
+    puts "Player 2 what is your name?"
+    name2 = gets.chomp.capitalize
+    player2 = Player.new(name2)
+    @players << player2
+
+    puts "#{player1} and #{player2} are you ready for Rock, Paper, Scissors?!?"
+    puts
+  end
+  
+  #info to come here...
+  def start_game
+  end
   #trying to create more methods...not working...works if these aren't in method...
   #Putting this method into a player class.
   # def add_score(someones_score)

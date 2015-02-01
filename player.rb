@@ -3,15 +3,15 @@ require 'pry'
 #Methods aren't quite going according to plan...
 class Player
   #will eventually hold an array of all the players....
-  def initialize
-    @players = []
+  def initialize(name)
+    @name = []
     @player1_score = 0
     @player2_score = 0
   end 
   #attr_accessor :players
 
-  def add_player(name)
-    @players << name
+  def set_name (name)
+    @name << name
   end
 
   def add_score(someones_score)
