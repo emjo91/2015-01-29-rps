@@ -1,4 +1,9 @@
+require_relative 'player'
+
 class Game
+  @player1 = player1
+  @player2 = player2
+  
   until (@player1_score - 2) == (@player2_score) || (@player2_score - 2) == (@player1_score)
     #Getting move info - Separate method later?
     attacks = []
@@ -10,15 +15,15 @@ class Game
     attacks << attack2
   #Player 1 wins
   if attack1 == "rock" && attack2 == "scissors"
-    add_score(@player1_score)
+    add_score(player1.score)
     puts "#{player1} wins the battle!"
     puts
   elsif attack1 == "paper" && attack2 == "rock"
-    add_score(@player1_score) += 1
+    add_score(player1.score)
     puts "#{player1} wins the battle!"
     puts
   elsif attack1 == "scisscors" && attack2 == "paper"
-    add_score(@player1_score) += 1
+    add_score(player1.score)
     puts "#{player1} wins! the battle"
     puts
   #No winners
@@ -33,15 +38,15 @@ class Game
     puts
   #Player 2 wins
   elsif attack1 == "rock" && attack2 == "paper"
-    add_score(@player2_score) += 1
+    add_score(player2.score)
     puts "#{player2} wins the battle!"
     puts
   elsif attack1 == "paper" && attack2 == "scissors"
-    add_score(@player2_score) += 1
+    add_score(player2.score)
     puts "#{player2} wins the battle!"
     puts
   elsif attack1 == "scissors the battle!" && attack2 == "rock"
-    add_score(@player2_score) += 1
+    add_score(player2.score)
     puts "#{player2} wins!"
     puts
   else 
