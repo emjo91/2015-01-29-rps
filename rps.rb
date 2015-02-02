@@ -26,16 +26,16 @@ require_relative 'game'
 # Right now, it contains a rock paper scissors game, and people who play it!
 # I do realize this is a mess. It's a WIP.
 #
-# Attributes:
-# @none - None so far. This is one big monster mess of a method.
 #
 # Public Methods:
-# driver
+# 
 class Driver
   
   attr_reader :player1, :player2
   
   def begin_game
+    g1 = Game.new
+    g1.new_game
     puts "Player 1, what is your name?"
     name1 = gets.chomp.capitalize
     player1 = Player.new(name1)
@@ -52,6 +52,4 @@ class Driver
 
 end
 
-  
-
-#binding.pry
+binding.pry
