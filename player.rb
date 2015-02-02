@@ -1,6 +1,6 @@
 require 'pry'
 require_relative 'rps'
-require_relative 'game'
+#require_relative 'game'
 
 class Player
   def initialize(name)
@@ -10,12 +10,8 @@ class Player
   attr_accessor :name, :score
 
   def add_score
-    @score =+ 1
-  end
-  
-  def player1_show_score
-    @player1
+    @score += 1
   end
 end
 
-#binding.pry
+binding.pry
