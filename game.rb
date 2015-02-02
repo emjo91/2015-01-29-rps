@@ -4,10 +4,12 @@ require_relative 'rps'
 class Game
   def initalize
     @attacks = ["rock", "paper", "scissors"]
+    @score = score
+    @name = mame
   end
   
-  attr_reader :player1, :player2 
-   
+  attr_reader :player1, :player2
+     
   def new_game
     until (player1.score - 2) == (player2.score) || (player2.score - 2) == (player1.score)
       puts "player1.name choose a weapon: Rock, Paper, or Scissors"
@@ -26,6 +28,11 @@ class Game
         player2.add_score += 1
      end
    end
+   if (player1.score - 2) == (player2.score)
+     puts "#{player1.name} wins the war!!"
+   else
+     puts "#{player2.name} wins the war!!"
+   end
 end
 
 
@@ -33,9 +40,5 @@ end
   def rules
   end
 
-  if (player1.score - 2) == (player2.score)
-    puts "#{player1.name} wins the war!!"
-  else
-    puts "#{player2.name} wins the war!!"
-  end
+
 end

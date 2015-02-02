@@ -1,6 +1,6 @@
 require 'pry'
 require_relative 'player'
-require_relative 'game'
+#require_relative 'game'
 
 # Level 0 is where we get things working at their most basic level.
 #
@@ -29,13 +29,13 @@ require_relative 'game'
 #
 # Public Methods:
 # 
-class Driver
+#class Driver
   
-  attr_reader :player1, :player2
+  #attr_reader :player1, :player2
   
   def begin_game
-    g1 = Game.new
-    g1.new_game
+    #g1 = Game.new
+    #g1.new_game
     puts "Player 1, what is your name?"
     name1 = gets.chomp.capitalize
     player1 = Player.new(name1)
@@ -43,13 +43,13 @@ class Driver
     name2 = gets.chomp.capitalize
     player2 = Player.new(name2)
 
-    puts "#{player1} and #{player2} are you ready for Rock, Paper, Scissors?!?"
+    puts "#{player1.name} and #{player2.name} are you ready for Rock, Paper, Scissors?!?"
   end
 
   #info to come here...
-  def start_game
-  end
+  #def start_game
+  #end
 
-end
+#end
 
 binding.pry
