@@ -33,7 +33,9 @@ require_relative 'game'
 # driver
 class Driver
   
-  def get_info
+  attr_reader :player1, :player2
+  
+  def begin_game
     puts "Player 1, what is your name?"
     name1 = gets.chomp.capitalize
     player1 = Player.new(name1)
